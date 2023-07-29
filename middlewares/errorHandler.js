@@ -14,7 +14,7 @@ const errorHandler = (err, req, res, next) => {
 			break;
 		case "SequelizeUniqueConstraintError":
 			statusCode = 400;
-			message = "This email has already been used";
+			message = "Email has already been used";
 			break;
 		case "NoEmail":
 			statusCode = 400;
@@ -31,6 +31,10 @@ const errorHandler = (err, req, res, next) => {
 		case "NoPasswordInput":
 			statusCode = 400;
 			message = "There must be a password input";
+			break;
+		case "CustomBadRequestError":
+			statusCode = 400;
+			message = err.message;
 			break;
 
 		// 401 GANG

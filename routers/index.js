@@ -3,11 +3,10 @@
 const router = require("express").Router();
 
 const { loginRegisterRouter } = require("./loginRegister");
-
-// const { authentication } = require("../middlewares");
+const { countryRouter } = require("./country");
 
 router.use("/", loginRegisterRouter);
 
-// router.use(authentication);
+router.use("/country", countryRouter);
 
 module.exports = router;
