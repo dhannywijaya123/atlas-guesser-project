@@ -1,0 +1,5 @@
+node_modules
+.prettierignore
+.env
+credentials-for-deployment.md
+.sequelizerc
